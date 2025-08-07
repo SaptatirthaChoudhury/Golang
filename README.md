@@ -1,10 +1,4 @@
-Got it — I’ll prepare you a **polished `README.md`** overview based on your subfolders (`Basic`, `Command`, `Error`, `Interface`, `Logging`, `Pointer`, `Struct`).
 
-Here’s a well-structured markdown draft you can drop right into your repo:
-
----
-
-````markdown
 # Golang Playground 🚀
 
 This repository is a personal learning and experimentation space for mastering **Go (Golang)**.  
