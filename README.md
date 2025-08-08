@@ -114,8 +114,4 @@ go run ./Basic
 
 ---
 
-## ✨ Author
-
-# *Saptatirtha Choudhury*
-## Learning, building, and experimenting with Go.
 
