@@ -32,6 +32,18 @@ func NotifyUser(n Notifier) {
 	n.SendNotification("Your order has been shipped!")
 }
 
+type PriceCalculator interface {
+	// We don't care about parameter names in the interface
+	CalculatePrice(string, float64, float64) float64
+}
+
+type Product struct{}
+
+func (p Product) CalculatePrice(string, float64, float64) float64 {
+	fmt.Println("Parameters ignored, using flat price")
+	return 100.0
+}
+
 func main() {
 	email := EmailNotifier{
 		Email: "saptatirtha@gmail.com",
@@ -40,6 +52,15 @@ func main() {
 		Phone: "+916001495259",
 	}
 
+	//email.SendNotification("sending email")
+	//sms.SendNotification("sending sms")
+
 	NotifyUser(email)
 	NotifyUser(sms)
+
+	var calc PriceCalculator = Product{}
+	fmt.Println("Final price:", calc.CalculatePrice("Cheese", 55.67, 2.12))
+
+	x := Product{}
+	fmt.Println("x: ", x.CalculatePrice("Butter", 21.11, 1.11))
 }

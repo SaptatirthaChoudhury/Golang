@@ -12,7 +12,7 @@ type Logger interface {
 	Log(message string)
 }
 
-// ConsoleLogger struct - loga to terminal
+// ConsoleLogger struct - logs to terminal
 type ConsoleLogger struct{}
 
 func (c ConsoleLogger) Log(message string) {
@@ -45,5 +45,12 @@ func processSomething(logger Logger) {
 
 func main() {
 	// Use console logging
-	
+	consoleLogger := ConsoleLogger{}
+	processSomething(consoleLogger)
+
+	// Use file logging
+	fileLogger := FileLogger{Filename: "app.log"}
+	processSomething(fileLogger)
+
+	fmt.Println("Check app.log for file logs")
 }

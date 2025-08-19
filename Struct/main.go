@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	
+	
 )
 
 // Define the struct
@@ -68,4 +70,6 @@ func main() {
 
 	fmt.Println("=== After Update ===")
 	user3.PrintInfo()
+
+	Notifier()
 }
